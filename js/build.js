@@ -25,6 +25,8 @@
         chartReady = resolve;
       });
 
+      $container.translate();
+
       function resetData() {
         data.entries = [];
         data.totalEntries = 0;
@@ -106,9 +108,9 @@
 
       function refreshChartInfo() {
         // Update total count
-        $container.find('.total').html(data.totalEntries);
+        $container.find('.total').html(TN(data.totalEntries));
         // Update last updated time
-        $container.find('.updatedAt').html(moment().format(updateDateFormat));
+        $container.find('.updatedAt').html(TD(new Date(), { format: 'LTS' }));
       }
 
       function refreshChart() {
