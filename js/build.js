@@ -54,7 +54,7 @@ Fliplet.Widget.instance('chart-line-1-1-0', function(data) {
           type: 'line'
         });
       }).then(function() {
-        if (_.isFunction(data.getData)) {
+        if (FlipletChartLineUtils.isFunction(data.getData)) {
           var response = data.getData();
 
           if (!(response instanceof Promise)) {
@@ -96,7 +96,7 @@ Fliplet.Widget.instance('chart-line-1-1-0', function(data) {
 
             data.entries.push([x, y]);
           });
-          data.entries = _.sortBy(data.entries, function(entry) {
+          data.entries = FlipletChartLineUtils.sortBy(data.entries, function(entry) {
             return entry[0];
           });
           // SAVES THE TOTAL NUMBER OF ROW/ENTRIES
@@ -416,7 +416,7 @@ Fliplet.Widget.instance('chart-line-1-1-0', function(data) {
   }
 
   Fliplet().then(function() {
-    var debounceLoad = _.debounce(init, 500, { leading: true });
+    var debounceLoad = FlipletChartLineUtils.debounce(init, 500, { leading: true });
 
     Fliplet.Studio.onEvent(function(event) {
       if (event.detail.event === 'reload-widget-instance') {
