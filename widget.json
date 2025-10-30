@@ -14,8 +14,7 @@
       "fliplet-studio-ui",
       "jquery",
       "handlebars",
-      "bootstrap",
-      "lodash"
+      "bootstrap"
     ],
     "assets": ["css/interface.css", "js/interface.js"]
   },
@@ -27,9 +26,8 @@
       "fliplet-chart",
       "font-awesome",
       "fliplet-core",
-      "fliplet-datasources",
-      "lodash"
+      "fliplet-datasources"
     ],
-    "assets": ["css/build.css", "js/build.js"]
+    "assets": ["css/build.css", "js/utils.js", "js/build.js"]
   }
 }
